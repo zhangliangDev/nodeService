@@ -1,7 +1,7 @@
 var express = require('express')
 var session = require('express-session');  //session的持久化模块
 var bodyParser = require('body-parser');
-var router = require('./routes/index') //路由信息
+var router = require('./routers/index') //路由信息
 var config = require('./config/config.base') //基础信息
 var redisServer = require('./config/redis') //基础信息
 var app = express();
