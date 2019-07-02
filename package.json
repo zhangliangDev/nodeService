@@ -1,13 +1,11 @@
 {
-  "name": "nodeadmin",
+  "name": "nodeservice",
   "version": "1.0.0",
-  "description": "",
+  "description": "node + redis + mongo + mysql + fastdfs",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "directories": {
+    "doc": "doc"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "express-session": "^1.15.6",
@@ -17,5 +15,22 @@
     "mongoose": "^5.6.2",
     "mysql": "^2.15.0",
     "redis": "^2.8.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangliangDev/nodeService.git"
+  },
+  "keywords": [
+    "nodeJsmongodbredismysqlfastdfs"
+  ],
+  "author": "leon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangliangDev/nodeService/issues"
+  },
+  "homepage": "https://github.com/zhangliangDev/nodeService#readme"
 }
