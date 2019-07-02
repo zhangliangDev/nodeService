@@ -1,0 +1,76 @@
+<html>
+<head>
+
+    <script src="./style/JS/jquery.min.js"></script>
+    
+</head>
+<body>
+
+<button id="login">login</button>
+<button id="query">query</button>
+<button id="insert">insert</button>
+<button id="logout">logout</button>
+<script type="text/javascript">
+
+        var x = "";
+        $("#login").click(function(){
+            $.ajax({ 
+                type : "POST", //提交方式 
+                url : "/userRole/login",//路径 
+                data : { 
+                 user_name:"admin",
+                 password: '123456'
+                },//数据，这里使用的是Json格式进行传输 
+                success : function(result) {//返回数据根据结果进行相应的处理 
+                    console.log(result);
+                    x = result.token;
+                    $("body").append(JSON.stringify(result)+"<br />");
+                }   
+               }); 
+        });
+        $("#query").click(function(){
+            $.ajax({ 
+                type : "POST", //提交方式 
+                url : "/userRole/test",//路径 
+                data : { 
+                    user_name:"abcd"
+                },//数据，这里使用的是Json格式进行传输 
+                success : function(result) {//返回数据根据结果进行相应的处理 
+                    console.log(result);
+                    $("body").append(JSON.stringify(result)+"<br />");
+                } 
+            }); 
+            
+        });
+        $("#insert").click(function(){
+           
+            $.ajax({ 
+                type : "POST", //提交方式 
+                url : "/userRole/insert",//路径 
+                data : { 
+                    // page:1,
+                    // size:10,
+                    user_name:"abcd"
+                },//数据，这里使用的是Json格式进行传输 
+                success : function(result) {//返回数据根据结果进行相应的处理 
+                    console.log(result);
+                    $("body").append(JSON.stringify(result)+"<br />");
+                } 
+            }); 
+        });
+        $("#logout").click(function(){
+            $.ajax({ 
+                type : "POST", //提交方式 
+                url : "/userRole/logout",//路径 
+                data : { 
+                    key: x
+                },//数据，这里使用的是Json格式进行传输 
+                success : function(result) {//返回数据根据结果进行相应的处理 
+                    console.log(result);
+                    $("body").append(JSON.stringify(result)+"<br />");
+                } 
+            }); 
+        });
+</script>
+</body>
+</html>
